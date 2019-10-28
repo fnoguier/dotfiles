@@ -1,6 +1,6 @@
 #! /bin/bash
 
-[[ -z $backup_suffix ]] && backup_suffix=before_frno_dotfiles
+# [[ -z $backup_suffix ]] && backup_suffix=before_frno_dotfiles
 
 declare -a directories
 directories=($@)
@@ -20,7 +20,8 @@ for dir in "${directories[@]}"; do
 			echo "Creating symlinks for $dir"
 			while read df; do
 				if [ -w ~/$df ]; then
-					mv -f ~/$df ~/$df.$backup_suffix
+					# mv -f ~/$df ~/$df.$backup_suffix
+					rm ~/$df
 				fi
 				ln -s $(pwd)/$df ~/$df
 				echo "created symlink for $df"
