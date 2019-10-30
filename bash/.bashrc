@@ -74,29 +74,8 @@ xterm*|rxvt*)
     ;;
 esac
 
-ls_opts="--group-directories-first"
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    ls_opts="$ls_opts --color=auto"
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-
-
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ls="ls $ls_opts"
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -122,6 +101,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# attach to an existing tmux session or create a new one 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux -2 attach -t default || tmux -2 new -s default
 fi
