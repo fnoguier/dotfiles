@@ -7,7 +7,8 @@ alias egrep='egrep --color=always'
 alias less='less -R'
 
 # Utilities
-alias ll='ls -alF | less'
+alias ll='ls -alF'
+alias lll='ll | less'
 alias la='ls -A'
 alias l='ls -CF'
 
