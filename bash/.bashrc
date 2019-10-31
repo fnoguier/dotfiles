@@ -102,9 +102,11 @@ if ! shopt -oq posix; then
 fi
 
 # attach to an existing tmux session or create a new one 
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux -2 attach -t default || tmux -2 new -s default
-fi
+function tm {
+	if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    		tmux -2 attach -t default || tmux -2 new -s default
+	fi
+}
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/frederic/.sdkman"
