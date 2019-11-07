@@ -14,6 +14,8 @@ HISTCONTROL=ignoreboth:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+
+# write to history file after each command
 if [[ $PROMPT_COMMAND != *"history -a"* ]]; then
 	  PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 fi
@@ -107,6 +109,11 @@ function tm {
     		tmux -2 attach -t default || tmux -2 new -s default
 	fi
 }
+
+# Fredfile support !
+if [ -f ~/ .bash_Fredfile]; then
+    . ~/.bash_Fredfile
+fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/frederic/.sdkman"

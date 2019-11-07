@@ -1,0 +1,9 @@
+#/bin/env bash
+
+_fred_completions()
+{
+	COMPREPLY=($(compgen -W "$(test -r Fredfile && 	sed -nr 's/(^[^\t][^[:space:]]+):.*/\1/p' Fredfile)" -- "${COMP_WORDS[1]}"))
+}
+
+alias fred='make -f Fredfile'
+complete -F _fred_completions fred
