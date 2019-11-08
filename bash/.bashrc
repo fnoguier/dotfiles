@@ -111,7 +111,7 @@ function tm {
 }
 
 # Fredfile support !
-if [ -f ~/ .bash_Fredfile]; then
+if [ -f ~/.bash_Fredfile ]; then
     . ~/.bash_Fredfile
 fi
 
