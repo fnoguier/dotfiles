@@ -1,0 +1,15 @@
+[user]
+	name = Frederic Noguier
+	email = noguier@netguardians.ch
+[core]
+	excludesfile = /home/frederic/.gitignore_global
+[alias]
+	log1= log --oneline
+	st=status
+	rs=reset
+	rb=rebase
+	co=checkout
+	ci=commit -v
+	wip=commit -am "WIP"
+	sw=switch
+	swb= switch "$(git reflog | grep 'moving from' | head -n 1 | cut -d ' ' -f 6)"
