@@ -14,6 +14,10 @@ alias l='ls -CF'
 
 alias timestamp='date -u +%Y%m%d%H%M%S'
 
+# sdkman shortcut
+alias java8='sdk use java 8.0.222.hs-adpt'
+alias java11='sdk use java 11.0.5.hs-adpt'
+
 # edit shortcuts
 function vim_and_source {
 	test -n "$1" && vim "$1" && source "$1"
