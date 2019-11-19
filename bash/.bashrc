@@ -115,6 +115,11 @@ if [ -f ~/.bash_Fredfile ]; then
     . ~/.bash_Fredfile
 fi
 
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/frederic/.sdkman"
 [[ -s "/home/frederic/.sdkman/bin/sdkman-init.sh" ]] && source "/home/frederic/.sdkman/bin/sdkman-init.sh"
