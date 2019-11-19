@@ -14,6 +14,14 @@ alias l='ls -CF'
 
 alias timestamp='date -u +%Y%m%d%H%M%S'
 
+alias git_switch_back='git switch "$(git reflog | grep '"'"'moving from'"'"' | head -n 1 | cut -d '"' '"' -f 6)"'
+
+function find_and_grep {
+	find . -name "$1" | xargs -I %  grep --color=always -n "$2"  "%" /dev/null	
+}
+
+alias frep='find_and_grep'
+
 # sdkman shortcut
 alias java8='sdk use java 8.0.222.hs-adpt'
 alias java11='sdk use java 11.0.5.hs-adpt'
