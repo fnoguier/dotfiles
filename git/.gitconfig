@@ -4,12 +4,14 @@
 [core]
 	excludesfile = /home/frederic/.gitignore_global
 [alias]
-	log1= log --oneline
+	lg=log --graph --abbrev-commit --decorate --date=relative --all
+	l=log --oneline --format=%B -1
 	st=status
 	rs=reset
 	rb=rebase
 	co=checkout
-	ci=commit -v
+	ci=commit -v -a
+	ca=commit -v -a --amend
 	wip=commit -am "WIP"
 	sw=switch
-	swb= switch "$(git reflog | grep 'moving from' | head -n 1 | cut -d ' ' -f 6)"
+
