@@ -15,9 +15,10 @@ alias l='ls -CF'
 alias timestamp='date -u +%Y%m%d%H%M%S'
 
 alias git_switch_back='git switch "$(git reflog | grep '"'"'moving from'"'"' | head -n 1 | cut -d '"' '"' -f 6)"'
+alias ä=git_switch_back
 
 function find_and_grep {
-	find . -name "$1" | xargs -I %  grep --color=always -n "$2"  "%" /dev/null	
+	find . -type f -name "$1" | xargs -I %  grep --color=always -n "$2"  "%" /dev/null	
 }
 
 alias frep='find_and_grep'
@@ -44,10 +45,15 @@ function cd_in_home {
 alias à='cd_in_home'
 alias àd='à dvlp'
 alias àda='à dvlp/ngAuth'
+alias àde='à dvlp/ngEvents'
+alias àdiv='à dvlp/ngIntegration/vagrant'
+alias àdp='à dvlp/ngPollingSystem'
 alias àds='à dvlp/ngScreener/'
 alias àdsb='à dvlp/ngScreener/ngBrowser'
 alias àdsbf='à dvlp/ngScreener/ngBrowser/frontend'
 alias àdsbb='à dvlp/ngScreener/ngBrowser/back'
-alias àdiv='à dvlp/ngIntegration/vagrant'
 
 alias àfd='à frno/dotfiles'
+
+alias àn='à Documents/notes'
+
