@@ -28,14 +28,21 @@ alias java8='sdk use java 8.0.222.hs-adpt'
 alias java11='sdk use java 11.0.5.hs-adpt'
 
 # edit shortcuts
-function vim_and_source {
-	test -n "$1" && vim "$1" && source "$1"
-}
 alias é='vim'
+function vim_and_source {
+	test -n "$1" && é "$1" && source "$1"
+}
+function note_title {
+	head $1 -n 1 | cut -c -50 | tr -c '[:alnum:]._-' '_' | sed -r 's/_*$//g'
+}
+function note_new {
+	TS="note.$(timestamp)"
+	é $TS && mv $TS "$HOME/Documents/notes/$(note_title $TS)"
+}
+alias én='note_new'
 alias è='vim_and_source'
 alias èbashrc='vim_and_source ~/.bashrc'
 alias èalias='vim_and_source ~/.bash_aliases'
-alias étmux='vim ~/.tmux.conf'
 
 # directories shortcuts
 function cd_in_home {
