@@ -1,0 +1,5 @@
+root = true
+
+[{*.sh,Fredfile}]
+indent_style = tab
+
