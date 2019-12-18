@@ -6,7 +6,7 @@
 [alias]
 	lg=log --graph --abbrev-commit --decorate --date=relative --all
 	l=log --oneline --format=%B -1
-	st=status
+	st=status -s
 	rs=reset
 	rb=rebase
 	co=checkout
