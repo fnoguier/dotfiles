@@ -13,6 +13,7 @@ alias ll='ls -alF'
 alias lll='ll | less'
 alias la='ls -A'
 alias l='ls -CF'
+alias lt='ll -t | head'
 
 alias timestamp='date -u +%Y%m%d%H%M%S'
 
@@ -60,6 +61,8 @@ alias è='vim_and_source'
 alias èbashrc='vim_and_source ~/.bashrc'
 alias èalias='vim_and_source ~/.bash_aliases'
 
+#Fix touchpad two finger scroll after suspend
+alias fix2fs='sudo modprobe -r psmouse && sudo modprobe psmouse'
 # directories shortcuts
 function cd_in_home {
  test -n "$1" && cd "$HOME/$1" || cd "$HOME" || return
@@ -69,6 +72,8 @@ alias à='cd_in_home'
 alias àd='à dvlp'
 alias àda='à dvlp/ngAuth'
 alias àde='à dvlp/ngEvents'
+alias àdi='à dvlp/ngIntegration'
+alias àdin='à dvlp/ngIntegration/ngVirtualBoxREST'
 alias àdiv='à dvlp/ngIntegration/vagrant'
 alias àdp='à dvlp/ngPollingSystem'
 alias àds='à dvlp/ngScreener/'
@@ -79,4 +84,3 @@ alias àdsbb='à dvlp/ngScreener/ngBrowser/back'
 alias àfd='à frno/dotfiles'
 
 alias àn='à Documents/notes'
-
