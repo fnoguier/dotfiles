@@ -3,15 +3,12 @@
 	email = noguier@netguardians.ch
 [core]
 	excludesfile = /home/frederic/.gitignore_global
+	editor=vim
 [alias]
 	lg=log --graph --abbrev-commit --decorate --date=relative --all
 	l=log --oneline --format=%B -1
 	st=status -s
-	rs=reset
-	rb=rebase
-	co=checkout
 	ci=commit -v -a
 	ca=commit -v -a --amend
 	wip=commit -am "WIP"
 	sw=switch
-
