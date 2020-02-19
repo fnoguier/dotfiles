@@ -43,6 +43,7 @@ alias frep='find_and_grep'
 # sdkman shortcut
 alias java8='sdk use java 8.0.222.hs-adpt'
 alias java11='sdk use java 11.0.5.hs-adpt'
+alias java12='sdk use java 12.0.2.hs-adpt'
 
 # edit shortcuts
 alias é='vim'
