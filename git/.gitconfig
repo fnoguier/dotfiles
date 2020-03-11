@@ -8,7 +8,9 @@
 	lg=log --graph --abbrev-commit --decorate --date=relative --all
 	l=log --oneline --format=%B -1
 	st=status -s
+	c=commit -v
 	ci=commit -v -a
-	ca=commit -v -a --amend
+	ca=commit -v --amend
+	cia=commit -v -a --amend
 	wip=commit -am "WIP"
 	sw=switch
