@@ -6,6 +6,7 @@ alias ls='ls --color=always --group-directories-first'
 alias grep='grep --color=always'
 alias fgrep='fgrep --color=always'
 alias egrep='egrep --color=always'
+
 alias less='less -R'
 
 # Utilities
@@ -22,18 +23,18 @@ alias ä=git_switch_back
 alias äm='git switch master'
 
 function find_and_grep {
-	if [ -n "$1" ]; then
+	if [[ -n "$1" ]]; then
 	      	FNAME="$1"
 		shift
 	fi
-	if [ -n "$1" ]; then 
+	if [[ -n "$1" ]]; then
 		GREP_ARG="$1"
 	else
 		GREP_ARG="$FNAME"
 		FNAME="*"
 	fi
 	echo "find '$GREP_ARG' in files '$FNAME' under current directory" >&2
-	if [ -n "$GREP_ARG" ]; then 
+	if [[ -n "$GREP_ARG" ]]; then
 		grep -nRHI --color=always --include="$FNAME" "$GREP_ARG" 
 	fi
 }
@@ -47,31 +48,41 @@ alias java12='sdk use java 12.0.2.hs-adpt'
 
 # edit shortcuts
 alias é='vim'
-function vim_and_source {
+
+function edit_and_source {
 	test -n "$1" && é "$1" && source "$1"
-}
+}; alias è='edit_and_source'
+
 function note_title {
 	head "$1" -n 1 | cut -c -50 | tr -c '[:alnum:]._-' '_' | sed -r 's/_*$//g'
 }
+
 function note_new {
 	TS="note.$(timestamp)"
 	é "$TS" && mv "$TS" "$HOME/Documents/notes/$(note_title $TS)"
-}
-alias én='note_new'
-alias è='vim_and_source'
-alias èbashrc='vim_and_source ~/.bashrc'
-alias èalias='vim_and_source ~/.bash_aliases'
+}; alias én='note_new'
+
+alias èbashrc='è ~/.bashrc'
+alias èalias='è ~/.bash_aliases'
 
 #Fix touchpad two finger scroll after suspend
 alias fix2fs='sudo modprobe -r psmouse && sudo modprobe psmouse'
+
+# attach to an existing tmux session or create a new one
+function attach_or_create_tmux_session {
+	if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+		tmux -2 attach -t default || tmux -2 new -s default
+	fi
+}; alias tm='attach_or_create_tmux_session'
+
 # directories shortcuts
 function cd_in_home {
  test -n "$1" && cd "$HOME/$1" || cd "$HOME" || return
-}
+}; alias à='cd_in_home'
 
-alias à='cd_in_home'
 alias àd='à dvlp'
-alias àda='à dvlp/ngAuth'
+alias àda='à dvlp/ngAnalytics'
+alias àdd='à dvlp/ngDemo'
 alias àde='à dvlp/ngEvents'
 alias àdi='à dvlp/ngIntegration'
 alias àdin='à dvlp/ngIntegration/ngVirtualBoxREST'
@@ -83,5 +94,6 @@ alias àdsbf='à dvlp/ngScreener/ngBrowser/frontend'
 alias àdsbb='à dvlp/ngScreener/ngBrowser/back'
 
 alias àfd='à frno/dotfiles'
+alias àfc='à frno/impec_control'
 
 alias àn='à Documents/notes'

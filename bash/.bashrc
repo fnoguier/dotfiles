@@ -102,21 +102,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# attach to an existing tmux session or create a new one 
-function tm {
-	if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    		tmux -2 attach -t default || tmux -2 new -s default
-	fi
-}
-
 # Fredfile support !
 if [ -f ~/.bash_Fredfile ]; then
     . ~/.bash_Fredfile
 fi
-
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 export JAVA8_HOME="/home/frederic/.sdkman/candidates/java/8.0.222.hs-adpt/"
 
@@ -124,8 +113,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Python setup
+# Python environment setup as described in ngAnalytics
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/frederic/.sdkman"
