@@ -13,4 +13,7 @@
 	ca=commit -v --amend
 	cia=commit -v -a --amend
 	wip=commit -am "WIP"
+	wipa=commit -a --amend -m "WIP"
 	sw=switch
+[pull]
+	ff = only
