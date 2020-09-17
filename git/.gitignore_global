@@ -2,3 +2,5 @@ Fredfile*
 à*
 *.swp
 *.pyc
+*_fred/
+FRED/

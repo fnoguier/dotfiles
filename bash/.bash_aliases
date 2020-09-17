@@ -60,17 +60,17 @@ function edit_and_source {
 	test -n "$1" && é "$1" && source "$1"
 }; alias è='edit_and_source'
 
+alias èbashrc='è ~/.bashrc'
+alias èalias='è ~/.bash_aliases'
+
 function note_title {
 	head "$1" -n 1 | cut -c -50 | tr -c '[:alnum:]._-' '_' | sed -r 's/_*$//g'
 }
 
 function note_new {
 	TS="note.$(timestamp)"
-	é "$TS" && mv "$TS" "$HOME/Documents/notes/$(note_title $TS)"
+	é "$TS" && mv "$TS" "$HOME/Dropbox/ngnotes/$(note_title $TS)"
 }; alias én='note_new'
-
-alias èbashrc='è ~/.bashrc'
-alias èalias='è ~/.bash_aliases'
 
 #Fix touchpad two finger scroll after suspend
 alias fix2fs='sudo modprobe -r psmouse && sudo modprobe psmouse'
