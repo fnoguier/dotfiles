@@ -114,8 +114,10 @@ alias àdsb='à dvlp/ngScreener/ngBrowser'
 alias àdsbf='à dvlp/ngScreener/ngBrowser/frontend'
 alias àdsbb='à dvlp/ngScreener/ngBrowser/back'
 
+alias àf='à frno'
 alias àfd='à frno/dotfiles'
-alias àfc='à frno/impec_control'
+alias àff='à frno/fraud_register'
+alias àfi='à frno/impec_control'
 
 alias àn='à Documents/notes'
 
