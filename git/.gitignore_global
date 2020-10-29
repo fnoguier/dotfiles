@@ -4,3 +4,4 @@ Fredfile*
 *.pyc
 *_fred/
 FRED/
+.fred*

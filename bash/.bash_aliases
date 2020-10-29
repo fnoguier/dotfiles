@@ -22,10 +22,6 @@ alias lt='la -t | head'
 
 alias timestamp='date -u +%Y%m%d%H%M%S'
 
-alias git_switch_back='[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ] && git switch "$(git reflog | grep '"'"'moving from'"'"' | head -n 1 | cut -d '"' '"' -f 6)"'
-alias ä=git_switch_back
-alias äm='git switch master'
-
 function find_and_grep {
 	if [[ -n "$1" ]]; then
 	      	FNAME="$1"
@@ -105,6 +101,7 @@ alias àd='à dvlp'
 alias àda='à dvlp/ngAnalytics'
 alias àdd='à dvlp/ngDemo'
 alias àde='à dvlp/ngEvents'
+alias àdf='à dvlp/ngFraudRegister'
 alias àdi='à dvlp/ngIntegration'
 alias àdin='à dvlp/ngIntegration/ngVirtualBoxREST'
 alias àdiv='à dvlp/ngIntegration/vagrant'
@@ -116,7 +113,7 @@ alias àdsbb='à dvlp/ngScreener/ngBrowser/back'
 
 alias àf='à frno'
 alias àfd='à frno/dotfiles'
-alias àff='à frno/fraud_register'
+alias àff='à frno/fraud-register'
 alias àfi='à frno/impec_control'
 
 alias àn='à Documents/notes'

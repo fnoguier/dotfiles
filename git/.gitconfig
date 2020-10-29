@@ -9,11 +9,15 @@
 	l=log --oneline --format=%B -1
 	st=status -s
 	c=commit -v
-	ci=commit -v -a
-	ca=commit -v --amend
-	cia=commit -v -a --amend
-	wip=commit -am "WIP"
-	wipa=commit -a --amend -m "WIP"
+	ca=c --amend
+	ci=!git add -A . && git c
+	cia=!git ci --amend
+	cil=!git l > .fred_cil && git ci -F .fred_cil && rm .fred_cil
+	wip=!git ci -m "WIP"
+	wipa=!git add -A . && git commit -v --amend -m "WIP"
 	sw=switch
+	swm=sw master
+	swb=!git reflog | grep 'moving from' | head -n 1 | cut -d ' ' -f 6 | xargs -I% git sw %
+
 [pull]
 	ff = only
