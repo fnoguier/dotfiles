@@ -59,24 +59,8 @@ function edit_and_source {
 alias èbashrc='è ~/.bashrc'
 alias èalias='è ~/.bash_aliases'
 
-function note_title {
-	head "$1" -n 1 | cut -c -50 | tr -c '[:alnum:]._-' '_' | sed -r 's/_*$//g'
-}
-
-function note_new {
-	TS="note.$(timestamp)"
-	é "$TS" && mv "$TS" "$HOME/Dropbox/ngnotes/$(note_title $TS)"
-}; alias én='note_new'
-
 #Fix touchpad two finger scroll after suspend
 alias fix2fs='sudo modprobe -r psmouse && sudo modprobe psmouse'
-
-# attach to an existing tmux session or create a new one
-function attach_or_create_tmux_session {
-	if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-		tmux -2 attach -t default || tmux -2 new -s default
-	fi
-}; alias tm='attach_or_create_tmux_session'
 
 # directories navigation shortcuts
 alias .1='cd ../'
@@ -117,4 +101,3 @@ alias àff='à frno/fraud-register'
 alias àfi='à frno/impec_control'
 
 alias àn='à Documents/notes'
-

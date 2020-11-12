@@ -10,6 +10,7 @@
 	st=status -s
 	c=commit -v
 	ca=c --amend
+	cl=!git l > .fred_cl && git c -F .fred_cl && rm .fred_cl
 	ci=!git add -A . && git c
 	cia=!git ci --amend
 	cil=!git l > .fred_cil && git ci -F .fred_cil && rm .fred_cil

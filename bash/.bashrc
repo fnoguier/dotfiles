@@ -124,6 +124,11 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# NetGuardians specifics
+export NG_U="admin"
+export NG_P="netguardians"
+export NG_IP="192.168.56.11"
+export NG_PORT="63022"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/frederic/.sdkman"

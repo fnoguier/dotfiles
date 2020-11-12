@@ -6,6 +6,5 @@ _fred_completions()
 }
 
 alias fred='make -f Fredfile'
-alias ö='make -f Fredfile'
 complete -F _fred_completions fred
 complete -F _fred_completions ö

@@ -27,5 +27,3 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export EDITOR="vi"
-
-# xcape -e 'Caps_Lock=Escape'
