@@ -1,0 +1,6 @@
+# NetGuardians specifics
+
+NG_U="admin"
+NG_P="netguardians"
+NG_IP="192.168.56.11"
+NG_PORT="63022"

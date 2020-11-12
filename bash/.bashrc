@@ -99,6 +99,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.ng_aliases ]; then
+    . ~/.ng_aliases
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -115,6 +119,8 @@ if [ -f ~/.bash_Fredfile ]; then
     . ~/.bash_Fredfile
 fi
 
+export JAVA8_HOME="/home/frederic/.sdkman/candidates/java/8.0.222.hs-adpt/"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -124,14 +130,7 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# NetGuardians specifics
-export NG_U="admin"
-export NG_P="netguardians"
-export NG_IP="192.168.56.11"
-export NG_PORT="63022"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/frederic/.sdkman"
 [[ -s "/home/frederic/.sdkman/bin/sdkman-init.sh" ]] && source "/home/frederic/.sdkman/bin/sdkman-init.sh"
-
-export JAVA8_HOME="$(sdk home java 8.0.222.hs-adpt)"

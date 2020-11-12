@@ -80,24 +80,3 @@ alias ....='.3'
 function cd_in_home {
  test -n "$1" && cd "$HOME/$1" || cd "$HOME" || return
 }; alias à='cd_in_home'
-
-alias àd='à dvlp'
-alias àda='à dvlp/ngAnalytics'
-alias àdd='à dvlp/ngDemo'
-alias àde='à dvlp/ngEvents'
-alias àdf='à dvlp/ngFraudRegister'
-alias àdi='à dvlp/ngIntegration'
-alias àdin='à dvlp/ngIntegration/ngVirtualBoxREST'
-alias àdiv='à dvlp/ngIntegration/vagrant'
-alias àdp='à dvlp/ngPollingSystem'
-alias àds='à dvlp/ngScreener/'
-alias àdsb='à dvlp/ngScreener/ngBrowser'
-alias àdsbf='à dvlp/ngScreener/ngBrowser/frontend'
-alias àdsbb='à dvlp/ngScreener/ngBrowser/back'
-
-alias àf='à frno'
-alias àfd='à frno/dotfiles'
-alias àff='à frno/fraud-register'
-alias àfi='à frno/impec_control'
-
-alias àn='à Documents/notes'
